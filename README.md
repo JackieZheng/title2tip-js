@@ -6,12 +6,12 @@
 
 jsDelivr:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@jackiezhengchina/title2tip@1.0.1/dist/title2tip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@jackiezhengchina/title2tip@1.0.2/dist/title2tip.min.js"></script>
 ```
 
 unpkg:
 ```html
-<script src="https://unpkg.com/@jackiezhengchina/title2tip@1.0.1/dist/title2tip.min.js"></script>
+<script src="https://unpkg.com/@jackiezhengchina/title2tip@1.0.2/dist/title2tip.min.js"></script>
 ```
 
 ## Install
