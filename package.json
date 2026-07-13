@@ -9,8 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "mkdir -p dist && uglifyjs src/title2tip.js -o dist/title2tip.min.js -c -m",
-    "prepare": "npm run build"
+    "build": "npx mkdirp dist && uglifyjs src/title2tip.js -o dist/title2tip.min.js -c -m"
   },
   "keywords": [
     "tooltip",
@@ -30,6 +29,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
-    "uglify-js": "^3.17.0"
+    "uglify-js": "^3.17.0",
+    "mkdirp": "^3.0.1"
   }
 }

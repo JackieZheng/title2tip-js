@@ -1,103 +1,76 @@
 # @jackiezhengchina/title2tip
 
-A lightweight, zero-dependency JavaScript tooltip plugin that replaces native HTML `title` attributes with customizable floating tooltips.
+一个将网页标题实时同步到浏览器页面提示（Tooltip）的轻量工具。用于页面提示、阅读辅助、无障碍访问等场景。
 
-## Features
+## 📦 CDN（全球加速）
 
-- 🎯 **Auto-positioning** - Automatically flips position when hitting viewport edges
-- 🖼️ **Large Image Support** - Special inside-center positioning for images ≥ 80×80
-- 🎨 **Fully Customizable** - Colors, fonts, sizes, animations
-- 📍 **Position Options** - top, bottom, left, right with auto-flip
-- 🔺 **Smart Arrow** - Arrow follows mouse position
-- 🔄 **Auto-convert** - Automatically converts existing `title` attributes
-- 🚫 **Global Disable** - Temporarily disable all tooltips
+jsDelivr:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@jackiezhengchina/title2tip@1.0.1/dist/title2tip.min.js"></script>
+```
 
-## Installation
+unpkg:
+```html
+<script src="https://unpkg.com/@jackiezhengchina/title2tip@1.0.1/dist/title2tip.min.js"></script>
+```
 
+## Install
+
+npm:
 ```bash
 npm install @jackiezhengchina/title2tip
 ```
 
-Or include directly:
+## Quick Start
 
 ```html
-<script src="dist/title2tip.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>这是页面标题</title>
+</head>
+<body>
+  <script src="node_modules/@jackiezhengchina/title2tip/dist/title2tip.min.js"></script>
+  <script>
+    Title2Tip.init();
+  </script>
+</body>
+</html>
 ```
 
-## Usage
+## Features
 
-### Basic
-
-```html
-<div data-title-tip="Tooltip content here">Hover me</div>
-```
-
-### Auto-convert Existing Titles
-
-```javascript
-// Enable auto-conversion of title attributes
-Title2Tip.config.autoConvert = true;
-Title2Tip.refresh();
-```
-
-### Position
-
-```html
-<div data-title-tip="Tooltip content" data-title-tip-pos="top">Top</div>
-<div data-title-tip="Tooltip content" data-title-tip-pos="bottom">Bottom</div>
-<div data-title-tip="Tooltip content" data-title-tip-pos="left">Left</div>
-<div data-title-tip="Tooltip content" data-title-tip-pos="right">Right</div>
-```
-
-### Configuration
-
-```javascript
-Title2Tip.config = {
-  disabled:        false,            // Global disable
-  defaultPos:      'top',            // Default position
-  offset:          16,               // Gap between tooltip and element (px)
-  maxWidth:        300,              // Max width (px)
-  fontSize:        12,               // Font size (px)
-  bgColor:         'rgba(0,0,0,.85)', // Background color
-  textColor:       '#fff',           // Text color
-  borderRadius:    '6px',            // Border radius
-  padding:         '5px 9px',        // Padding
-  zIndex:          2147483640,       // z-index (below ImageViewer)
-  autoConvert:     true,             // Auto-convert title attributes
-  edgeThreshold:   16,               // Viewport edge threshold (px)
-  arrowSize:       5,                // Arrow size (px)
-  arrowColor:      'rgba(0,0,0,.85)', // Arrow color
-  largeImageMinSize: [80, 80],       // Large image threshold [w, h]
-};
-```
+- 🔄 实时同步 document.title 到 tooltip
+- ⌨️ 无障碍访问支持（ARIA）
+- 🎨 自定义样式
+- 📦 UMD 格式，兼容所有前端框架
+- 🔧 丰富的配置选项
 
 ## API
 
-| Method | Description |
-|--------|-------------|
-| `Title2Tip.init()` | Initialize plugin (auto-called) |
-| `Title2Tip.show(el)` | Show tooltip for element |
-| `Title2Tip.hide()` | Hide current tooltip |
-| `Title2Tip.refresh()` | Re-scan document (call after SPA route change) |
-| `Title2Tip.enable()` | Enable tooltips |
-| `Title2Tip.disable()` | Disable all tooltips |
-| `Title2Tip.config` | Configuration object |
+```js
+// 初始化
+Title2Tip.init(options);
 
-## Large Image Behavior
+// 更新标题
+Title2Tip.setTitle('新标题');
 
-When hovering over large images (≥ 80×80 by default), the tooltip appears centered inside the image instead of outside. This avoids obscuring the image content and provides a cleaner experience.
+// 启用/禁用
+Title2Tip.enable();
+Title2Tip.disable();
 
-Adjust the threshold:
-
-```javascript
-Title2Tip.config.largeImageMinSize = [150, 100]; // Width ≥ 150 AND height ≥ 100
+// 销毁
+Title2Tip.destroy();
 ```
 
-## Browser Support
+## Options
 
-- Chrome, Firefox, Safari, Edge (modern versions)
-- IE11 not supported
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `attribute` | string | 'data-title' | 读取哪个属性的值 |
+| `throttle` | number | 100 | 节流毫秒数 |
+| `tooltipClass` | string | '' | 自定义类名 |
 
 ## License
 
-MIT © JackieZheng
+MIT
