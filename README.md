@@ -1,4 +1,4 @@
-# @jackiezheng/title2tip
+# @jackiezhengchina/title2tip
 
 A lightweight, zero-dependency JavaScript tooltip plugin that replaces native HTML `title` attributes with customizable floating tooltips.
 
@@ -15,7 +15,7 @@ A lightweight, zero-dependency JavaScript tooltip plugin that replaces native HT
 ## Installation
 
 ```bash
-npm install @jackiezheng/title2tip
+npm install @jackiezhengchina/title2tip
 ```
 
 Or include directly:
