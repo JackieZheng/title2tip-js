@@ -1,0 +1,32 @@
+{
+  "name": "@jackiezheng/title2tip",
+  "version": "1.0.0",
+  "description": "Custom HTML title tooltip plugin with auto-positioning, large image support, and full customization",
+  "main": "dist/title2tip.min.js",
+  "module": "src/title2tip.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "uglifyjs src/title2tip.js -o dist/title2tip.min.js -c -m",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "tooltip",
+    "title",
+    "hover",
+    "popup",
+    "image-tooltip",
+    "position-adaptive"
+  ],
+  "author": "JackieZheng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackieZheng/title2tip-js"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.0"
+  }
+}
