@@ -1,6 +1,6 @@
 {
   "name": "@jackiezhengchina/title2tip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom HTML title tooltip plugin with auto-positioning, large image support, and full customization",
   "main": "dist/title2tip.min.js",
   "module": "src/title2tip.js",
