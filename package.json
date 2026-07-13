@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "uglifyjs src/title2tip.js -o dist/title2tip.min.js -c -m",
+    "build": "mkdir -p dist && uglifyjs src/title2tip.js -o dist/title2tip.min.js -c -m",
     "prepare": "npm run build"
   },
   "keywords": [
